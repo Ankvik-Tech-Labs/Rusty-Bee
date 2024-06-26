@@ -1,6 +1,6 @@
 # Rusty Bee
 
-A bee node implementation in Rust.
+A bee node implementation in Rust 🦀.
 
 ## Requirements
 
