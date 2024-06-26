@@ -1,0 +1,23 @@
+[package]
+name = "handshake"
+
+[dependencies]
+prost = "0.12.6"
+prost-types = "0.12.6"
+libp2p = { version = "0.54.0", git = "https://github.com/libp2p/rust-libp2p", features = [
+    "tokio",
+    "autonat",
+    "dns",
+    "kad",
+    "tcp",
+    "ping",
+    "noise",
+    "yamux",
+    "ecdsa",
+    "identify",
+    "macros"
+] }
+libp2p-stream = { git = "https://github.com/libp2p/rust-libp2p" }
+
+[build-dependencies]
+prost-build = "0.12.6"
