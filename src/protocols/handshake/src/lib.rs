@@ -6,7 +6,7 @@ pub mod swarm {
 // https://docs.rs/prost-build/latest/prost_build/
 
 extern crate prost;
-extern crate libp2p;
+// extern crate libp2p;
 // use libp2p::StreamProtocol;
 pub use swarm::handshake;
 
