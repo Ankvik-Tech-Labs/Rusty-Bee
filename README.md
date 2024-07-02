@@ -2,6 +2,10 @@
 
 A bee node implementation in Rust 🦀.
 
+## Demo
+
+![](media/demo.gif)
+
 ## Requirements
 
 ### 1. `protobuf-compiler`

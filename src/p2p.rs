@@ -100,7 +100,7 @@ pub async fn run() -> eyre::Result<()> {
 
 const HANDSHAKE_PROTOCOL: StreamProtocol = StreamProtocol::new("/swarm/handshake/11.0.0/handshake");
 
-/// A very simple, `async fn`-based connection handler for our custom echo protocol.
+/// `async fn`-based connection handler for our custom echo protocol.
 async fn connection_handler(
     ma: Multiaddr,
     mut control: stream::Control,
@@ -141,9 +141,6 @@ async fn send(mut stream: Stream, ma: Multiaddr, own_underlay: Multiaddr) -> io:
         observed_underlay: ma.to_vec(),
     };
 
-    // let mut buf = vec![0; syn.encode_length_delimited_to_vec()];
-    // syn.encode(&mut buf).unwrap();
-    // println!("{:?}", hex::encode(buf.as_slice()));
     stream
         .write_all(&syn.encode_length_delimited_to_vec())
         .await?;
@@ -200,17 +197,6 @@ impl Behaviour {
                 "/ipfs/id/1.0.0".to_string(),
                 key.clone(),
             )),
-            // auto_nat: autonat::Behaviour::new(
-            //     key.to_peer_id(),
-            //     autonat::Config {
-            //         retry_interval: Duration::from_secs(10),
-            //         refresh_interval: Duration::from_secs(30),
-            //         boot_delay: Duration::from_secs(5),
-            //         throttle_server_period: Duration::ZERO,
-            //         only_global_ips: false,
-            //         ..Default::default()
-            //     },
-            // ),
             ping: ping::Behaviour::default(),
             handshake: stream::Behaviour::new(),
         }
