@@ -10,5 +10,4 @@ extern crate prost;
 // use libp2p::StreamProtocol;
 pub use swarm::handshake;
 
-
 // const HANDSHAKE_PROTOCOL: StreamProtocol = StreamProtocol::new("/swarm/handshake/11.0.0/handshake");
